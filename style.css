@@ -18,6 +18,18 @@ h1 {
   margin: 80px auto;
 }
 
+.cta-button {
+  display: inline-block;
+  margin: 25px 0;
+  padding: 16px 28px;
+  background-color: #ff6b35;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
 .menu-button {
   display: block;
   width: 220px;
