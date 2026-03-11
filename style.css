@@ -38,14 +38,18 @@ h1 {
 
 .menu-button {
   display: block;
-  width: 220px;
-  margin: 12px auto;
-  padding: 14px;
+  width: 100%;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 18px;
+
   background-color: #2563eb;
   color: white;
+
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 10px;
+
+  font-size: 18px;
 }
 
 .cta-button:hover {
