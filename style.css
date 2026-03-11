@@ -1,12 +1,18 @@
 /* =========================
    1. RESET / BASE
 ========================= */
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   background-color: #f8fafc;
   text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* =========================
