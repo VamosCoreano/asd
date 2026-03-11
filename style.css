@@ -132,37 +132,41 @@ nav a {
    5. COMPONENTS
 ========================= */
 
-.cta-button {
-  display: inline-block;
-  margin: 25px 0;
-  padding: 14px 30px;
-  background-color: var(--color-primary-hover);
-  color: white;
-  text-decoration: none;
+.cta-button, .menu-button {
+  display: block;           /* 한 줄을 통째로 차지 (세로 정렬) */
+  width: 100%;              /* 부모 너비에 맞춤 */
+  max-width: 320px;         /* 버튼의 최대 너비를 동일하게 고정 */
+  margin: 12px auto;        /* 위아래 간격 12px, 좌우 중앙 정렬 */
+  padding: 16px 20px;       /* 버튼 안쪽 여백 (두께 통일) */
+  text-align: center;       /* 글자 중앙 정렬 */
+  text-decoration: none;    /* 밑줄 제거 */
   font-weight: 600;
-  border-radius: 6px;
-  font-size: 20px;
-  min-width: 220px;
+  border-radius: 8px;       /* 둥근 모서리 통일 */
+  font-size: var(--font-m); /* 폰트 크기 통일 (18px) */
+  transition: all 0.2s;     /* 호버 효과를 부드럽게 */
 }
+
+/* 메인 강조 버튼 (Consultar) */
+.cta-button {
+  background-color: var(--color-primary-hover); /* 조금 더 진한 색상 */
+   font-size: 20px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    /* 강조를 위해 미세한 그림자 추가 */
+}
+
+/* 일반 메뉴 버튼 */
 .menu-button {
-  display: inline-block;
-  width: auto;
-   min-width: 160px;
-  max-width: 400px;
-  margin: var(--space-s) auto;
-  padding: 12px 24px;
   background-color: var(--color-primary);
   color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: var(--font-m);
 }
-.cta-button:hover {
-  background-color: var(--color-primary-hover);
+
+/* 호버 효과 */
+.cta-button:hover, .menu-button:hover {
+  filter: brightness(0.9);  /* 마우스를 올리면 살짝 어두워짐 */
+  transform: translateY(-1px); /* 살짝 위로 떠오르는 느낌 */
 }
-.menu-button:hover {
-  background-color: var(--color-primary-hover);
-}
+
+
 /* back link */
 
 .back-link{
