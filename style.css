@@ -135,7 +135,7 @@ h1 {
 }
 
 .menu-section {
-  padding-top: var(--space-s);
+  padding-top: 0;
   padding-bottom: var(--space-l);
 }
 
