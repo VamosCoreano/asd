@@ -103,3 +103,10 @@ h1 {
 /* =========================
    5. SECTIONS
 ========================= */
+
+.footer {
+  margin-top: 80px;
+  padding: 40px 20px;
+  font-size: 14px;
+  color: #666;
+}
