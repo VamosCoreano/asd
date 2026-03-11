@@ -8,12 +8,12 @@ body {
   text-align: center;
 }
 
-
 /* =========================
    2. GLOBAL
 ========================= */
 
 h1 {
+  font-family: 'Poppins', sans-serif;
   color: #2c3e50;
 }
 .subtitle {
