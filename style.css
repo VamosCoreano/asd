@@ -189,8 +189,8 @@ nav a {
 
 .sub-text {
   font-size: var(--font-s);
-  font-weight: 580;
-  color: var(--color-muted);
+  font-weight: 550;
+  color: var(--color-text);
   display: block;
 }
 
