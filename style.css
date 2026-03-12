@@ -165,6 +165,7 @@ nav a {
    ========================================================================== */
 .hero {
   padding: var(--space-m) 0 var(--space-m);
+   text-align: center;
 }
 
 .hero h1 {
@@ -176,22 +177,22 @@ nav a {
 
 .hero-description {
   max-width: 500px; 
-  margin: 0 auto var(--space-m); 
-  line-height: 1.5; 
+  margin: 0 auto 32px; 
+  line-height: 1.6; 
 }
 
 .highlight-text {
    font-size: var(--font-m);
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
 }
 
 .sub-text {
   font-size: var(--font-s);
-  font-weight: 550;
-  color: var(--color-text);
+  font-weight: 400;
+  color: var(--color-muted);
   display: block;
 }
 
