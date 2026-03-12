@@ -69,12 +69,12 @@ img {
 /* Slim Header */
 .main-header {
   background: var(--color-surface);
-  padding: 6px 10px;
+  padding: 6px 8px;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  min-height: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
 }
@@ -86,6 +86,7 @@ img {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+   padding: 0 var(--space-s); 
 }
 
 .logo {
@@ -93,6 +94,15 @@ img {
   color: var(--color-primary);
   text-decoration: none;
   font-size: 14px;
+   line-height: 1; 
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 nav a {
@@ -101,6 +111,9 @@ nav a {
   color: var(--color-text);
   font-size: 12px;
   font-weight: 500;
+  line-height: 1; /* 로고와 동일하게 줄높이 1로 고정 */
+  display: flex;
+  align-items: center;
 }
 
 /* ==========================================================================
@@ -200,9 +213,12 @@ nav a {
    7. MOBILE OVERRIDES
    ========================================================================== */
 @media (max-width: 480px) {
-  .main-header { padding: 4px 16px; }
+  .main-header { padding: 4px 16px; height: 40px;}
   .logo { font-size: 13px; }
   nav a { margin-left: 10px; font-size: 11px; }
   .hero h1 { font-size: 28px; }
    h1 { font-size: 28px; margin-top: var(--space-m); }
+   .nav-container {padding: 0 var(--space-s); }
+}
+  
 }
