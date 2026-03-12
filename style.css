@@ -240,10 +240,10 @@ nav a {
    7. MOBILE OVERRIDES
    ========================================================================== */
 @media (max-width: 480px) {
-  .main-header { padding: 4px 16px; height: 40px;}
+  .main-header { padding: 4px 8px; height: 40px;}
   .logo { font-size: 13px; }
   nav a { margin-left: 10px; font-size: 11px; }
   .hero h1 { font-size: 28px; }
    h1 { font-size: 28px; margin-top: var(--space-m); }
-   .nav-container {padding: 0 var(--space-s); }
+   .nav-container {padding: 0 var(--space-xs); }
 }
