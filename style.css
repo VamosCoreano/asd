@@ -106,7 +106,7 @@ nav {
 }
 
 nav a {
-  margin-left: 16px;
+  margin-left: 12px;
   text-decoration: none;
   color: var(--color-text);
   font-size: 11px;
