@@ -6,6 +6,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Contacto - VAMOS COREANO</title>
+  <style>
+    /* 이메일 복사 알림창(Toast) 스타일 */
+    #copy-toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: var(--color-text);
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 12px;
+      position: fixed;
+      z-index: 1000;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.3s, bottom 0.3s;
+    }
+    #copy-toast.show {
+      visibility: visible;
+      opacity: 1;
+      bottom: 50px;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,7 +48,6 @@
 
   <main class="contact-main" style="padding-top: var(--space-m);">
     <div class="container">
-      
       <h1 style="margin-top: 0; margin-bottom: var(--space-l); letter-spacing: -0.02em;">CONTACTO</h1>
 
       <div class="hero-description">
@@ -35,19 +60,41 @@
           
           <a href="https://wa.me/yournumber" class="cta-button">WHATSAPP</a> 
           
-          <a href="mailto:1219.hlee@gmail.com" class="menu-button">EMAIL</a>
+          <a href="https://instagram.com/vamoscoreano" class="menu-button">INSTAGRAM</a>
+          
+          <button onclick="copyEmail()" class="menu-button" style="cursor: pointer; width: 100%; border: 1px solid #e5e7eb; background: #fff;">EMAIL</button>
           
           <p class="small-text" style="margin-top: var(--space-m);">
-            También puedes encontrarme en Instagram como @vamoscoreano
+            @vamoscoreano
           </p>
         </div>
       </section>
     </div>
   </main>
 
+  <div id="copy-toast">Copiado al portapapeles</div>
+
   <footer class="footer">
     <p>© 2026 VAMOS COREANO</p>
     <p>Profesor Hyunho Lee</p>
   </footer>
+
+  <script>
+    function copyEmail() {
+      const email = "1219.hlee@gmail.com";
+      
+      // 클립보드 복사 실행
+      navigator.clipboard.writeText(email).then(() => {
+        // 알림창 띄우기
+        const toast = document.getElementById("copy-toast");
+        toast.className = "show";
+        
+        // 2.5초 뒤에 알림창 숨기기
+        setTimeout(function(){ 
+          toast.className = toast.className.replace("show", ""); 
+        }, 2500);
+      });
+    }
+  </script>
 </body>
 </html>
