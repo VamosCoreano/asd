@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <title>Clases - VAMOS COREANO</title>
 </head>
 
 <body>
@@ -14,36 +14,46 @@
       <a href="index.html" class="logo">VAMOS COREANO</a>
       <nav>
         <a href="about.html">SOBRE PROFE</a>
-      <a href="class.html">CLASES</a>
-      <a href="contact.html">CONTACTO</a>
+        <a href="class.html">CLASES</a>
+        <a href="contact.html">CONTACTO</a>
       </nav>
     </div>
   </header>
-  
-  <div class="container">
 
-<h1>Clases de coreano</h1>
-
-<p class="subtitle">
-Clases simples y claras para empezar a hablar coreano.
-</p>
-    <div class="card">
-
-      <img src="images/basico.jpg" class="class-image">
+  <main class="class-main" style="padding-top: var(--space-m);">
+    <div class="container">
       
-      <h3>Coreano para principiantes</h3>
-      
-      <p>
-      Aprende Hangul, pronunciación básica y frases simples para empezar a hablar coreano.
-      No necesitas conocimientos previos.
-      </p>
-      
-      <a href="consultar.html" class="menu-button">
-      Consultar esta clase
-      </a>
+      <h1 style="margin-top: 0; margin-bottom: var(--space-l); letter-spacing: -0.01em;">CLASES</h1>
 
+      <div class="hero-description" style="margin-bottom: var(--space-l);">
+        <p class="highlight-text">Clases simples y claras para empezar a hablar coreano.</p>
+        <p class="sub-text">Encuentra el nivel ideal para tu viaje con el idioma.</p>
+      </div>
+
+      <div class="class-list" style="display: flex; flex-direction: column; gap: var(--space-m);">
+        
+        <div class="card" style="text-align: left;">
+          <h2 class="highlight-text" style="font-size: var(--font-l); margin-bottom: 8px;">COREANO BÁSICO</h2>
+          <p class="sub-text" style="margin-bottom: var(--space-m); line-height: 1.7;">
+            Aprende Hangul, pronunciación básica y frases simples para empezar a hablar coreano desde cero. No necesitas conocimientos previos.
+          </p>
+          <a href="consultar.html" class="menu-button" style="width: auto; display: inline-block;">CONSULTAR ESTA CLASE</a>
+        </div>
+
+        <div class="card" style="text-align: left; opacity: 0.6; border-style: dashed; background-color: transparent;">
+          <h2 class="highlight-text" style="font-size: var(--font-l); margin-bottom: 8px; color: var(--color-muted);">PRÓXIMAMENTE...</h2>
+          <p class="sub-text" style="line-height: 1.7;">
+            Estamos preparando niveles intermedios y talleres de cultura. Mantente atento a las actualizaciones.
+          </p>
+        </div>
+
+      </div>
     </div>
-  </div>  
+  </main>
 
+  <footer class="footer">
+    <p>© 2026 VAMOS COREANO</p>
+    <p>Profesor Hyunho Lee</p>
+  </footer>
 </body>
 </html>
