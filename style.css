@@ -136,7 +136,7 @@ nav a {
 .cta-button {
   background-color: var(--color-primary-hover);
   color: white;
-  font-size: 18px;
+  font-size: var(--font-m);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
