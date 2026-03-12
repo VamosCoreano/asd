@@ -1,99 +1,81 @@
-/* =========================
-   1. DESIGN TOKENS
-========================= */
+/* ==========================================================================
+   1. DESIGN TOKENS (Variables)
+   ========================================================================== */
 :root {
+  /* Spacing */
   --space-s: 16px;
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
    
+  /* Typography */
   --font-xs: 12px;
   --font-s: 16px;
   --font-m: 18px;
   --font-l: 20px;
-  --font-xl: 42px;
+  --font-xl: 40px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
 
-   --color-bg: #f9fafb;
-   --color-text: #111827;
-   --color-muted: #6b7280;
-   --color-primary: #2563eb;
-   --color-primary-hover: #1d4ed8;
-   --color-surface: #ffffff;
+  /* Colors */
+  --color-bg: #f9fafb;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-surface: #ffffff;
 }
-/* =========================
-   2. RESET / BASE
-========================= */
 
+/* ==========================================================================
+   2. RESET & BASE STYLES
+   ========================================================================== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: var(--font-m);
+  line-height: 1.6;
   background-color: var(--color-bg);
   color: var(--color-text);
   text-align: center;
-  margin: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.2;
+  margin-bottom: var(--space-s);
 }
 
 img {
   max-width: 100%;
   height: auto;
-}
-.class-image{
-width:100%;
-border-radius:10px;
-margin-bottom:var(--space-s);
+  border-radius: 8px;
 }
 
-h1, h2, h3, p {
-  margin-top: 0;
-}
-body {
-  line-height: 1.6;
-}
-h1, h2, h3 {
-  line-height: 1.2;
-}
-/* =========================
-   3. TYPOGRAPHY
-========================= */
-
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--font-xl);
-  font-weight: 700;
-  color: var(--color-text);
-}
-.subtitle {
-  font-size: var(--font-l);
-  color: var(--color-muted);
-  margin-bottom: var(--space-m);
+/* ==========================================================================
+   3. LAYOUT COMPONENTS
+   ========================================================================== */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--space-s);
 }
 
-.hero-subtitle {
-   max-width: 420px;
-   margin-bottom: var(--space-m);
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
-}
-
-/* =========================
-   4. LAYOUT
-========================= */
-/* 상단 내비게이션 추가 */
+/* Slim Header */
 .main-header {
   background: var(--color-surface);
-  padding: 4px 15px; 
+  padding: 6px 20px;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  min-height: 40px; 
+  min-height: 44px;
   display: flex;
   align-items: center;
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -102,158 +84,122 @@ h1 {
   max-width: 600px;
   margin: 0 auto;
 }
+
 .logo {
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 14px; 
-  line-height: 1;  
+  font-size: 14px;
 }
+
 nav a {
   margin-left: 12px;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 12px; 
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1;
-}
-/*MOBILE*/
-@media (max-width: 480px) {
-  .main-header {
-    padding: 4px 16px; 
-  }
-  
-  .logo {
-    font-size: 14px; /* 로고 크기 추가 축소 */
-  }
-  
-  nav a {
-    margin-left: 8px; /* 링크 사이 간격 좁히기 */
-    font-size: 12px;  /* 모바일 링크는 푸터와 동일한 12px */
-  }
-}
-///////////**//////
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 var(--space-s);
 }
 
+/* ==========================================================================
+   4. UI COMPONENTS (Buttons, Cards)
+   ========================================================================== */
+/* Common Button Style */
+.cta-button, .menu-button {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 12px auto;
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.cta-button {
+  background-color: var(--color-primary-hover);
+  color: white;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.menu-button {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: var(--font-m);
+}
+
+.cta-button:hover, .menu-button:hover {
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+}
+
+/* Content Card */
 .card {
   background: white;
   padding: var(--space-m);
   margin-top: var(--space-m);
   border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* ==========================================================================
+   5. PAGE SECTIONS
+   ========================================================================== */
+.hero {
+  padding: var(--space-l) 0 var(--space-m);
+}
+
+.hero h1 {
+  font-size: var(--font-xl);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  max-width: 420px;
+  margin: 0 auto var(--space-m);
+  color: var(--color-muted);
 }
 
 .profile-photo {
-  width: 180px;
+  width: 150px; /* 약간 축소하여 세련미 강조 */
   border-radius: 50%;
-  margin-bottom: 20px;
-}
-/* =========================
-   5. COMPONENTS
-========================= */
-
-.cta-button, .menu-button {
-  display: block;           /* 한 줄을 통째로 차지 (세로 정렬) */
-  width: 100%;              /* 부모 너비에 맞춤 */
-  max-width: 320px;         /* 버튼의 최대 너비를 동일하게 고정 */
-  margin: 12px auto;        /* 위아래 간격 12px, 좌우 중앙 정렬 */
-  padding: 16px 20px;       /* 버튼 안쪽 여백 (두께 통일) */
-  text-align: center;       /* 글자 중앙 정렬 */
-  text-decoration: none;    /* 밑줄 제거 */
-  font-weight: 600;
-  border-radius: 8px;       /* 둥근 모서리 통일 */
-  font-size: var(--font-m); /* 폰트 크기 통일 (18px) */
-  transition: all 0.2s;     /* 호버 효과를 부드럽게 */
-}
-
-/* 메인 강조 버튼 (Consultar) */
-.cta-button {
-  background-color: var(--color-primary-hover); /* 조금 더 진한 색상 */
-   font-size: 20px;
-  color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    /* 강조를 위해 미세한 그림자 추가 */
-}
-
-/* 일반 메뉴 버튼 */
-.menu-button {
-  background-color: var(--color-primary);
-  color: white;
-}
-
-/* 호버 효과 */
-.cta-button:hover, .menu-button:hover {
-  filter: brightness(0.9);  /* 마우스를 올리면 살짝 어두워짐 */
-  transform: translateY(-1px); /* 살짝 위로 떠오르는 느낌 */
-}
-
-
-/* back link */
-
-.back-link{
-display:inline-block;
-margin-bottom:var(--space-m);
-font-size:var(--font-s);
-color:var(--color-muted);
-text-decoration:none;
-}
-
-.back-link:hover{
-text-decoration:underline;
-}
-
-/* small text */
-
-.small-text{
-font-size:var(--font-s);
-color:var(--color-muted);
-margin-top:var(--space-m);
-}
-
-/* whatsapp secondary button */
-
-.whatsapp-button{
-display:inline-block;
-margin-top:var(--space-s);
-font-size:var(--font-s);
-color:var(--color-primary);
-text-decoration:none;
-font-weight:500;
-}
-
-.whatsapp-button:hover{
-text-decoration:underline;
-}
-
-/* =========================
-   6. SECTIONS
-========================= */
-
-.hero {
-  padding-top: var(--space-s);
-  padding-bottom: var(--space-m);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hero h1 {
-   letter-spacing: -0.02em;
   margin-bottom: var(--space-m);
 }
-.menu-section {
-  padding-top: 0;
-  padding-bottom: var(--space-l);
-}
-.footer {
-  margin-top: var(--space-xl);
-  padding: 30px 20px;
+
+/* ==========================================================================
+   6. UTILITIES & FOOTER
+   ========================================================================== */
+.small-text {
   font-size: var(--font-xs);
   color: var(--color-muted);
-  line-height: 1.3;
+  margin-top: var(--space-m);
 }
-.footer p {
-  margin: 2px 0;
+
+.whatsapp-button {
+  display: inline-block;
+  margin-top: var(--space-s);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--font-s);
+}
+
+.footer {
+  margin-top: var(--space-xl);
+  padding: 40px 20px;
+  font-size: var(--font-xs);
+  color: var(--color-muted);
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ==========================================================================
+   7. MOBILE OVERRIDES
+   ========================================================================== */
+@media (max-width: 480px) {
+  .main-header { padding: 4px 16px; }
+  .logo { font-size: 13px; }
+  nav a { margin-left: 10px; font-size: 11px; }
+  .hero h1 { font-size: 28px; }
 }
