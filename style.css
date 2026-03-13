@@ -268,3 +268,50 @@ nav a {
    .nav-container {padding: 0 var(--space-xs); }
    .hero h1, h1, .page-title { font-size: 30px; }
 }
+/* ==========================================================================
+   8. CONTACT PAGE SPECIAL (Toast & Button Reset)
+   ========================================================================== */
+
+/* 이메일 복사 알림창: 공중부양 레이어 */
+#copy-toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: var(--color-text);
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+
+#copy-toast.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
+/* 버튼 태그 리셋: <a> 태그와 1px의 오차도 없이 일치시킴 */
+button.menu-button {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  font-family: inherit; /* 부모의 Inter 폰트 상속 */
+  outline: none;
+}
+
+button.menu-button:hover {
+  background-color: #f8fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
