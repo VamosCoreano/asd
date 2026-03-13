@@ -49,11 +49,17 @@
   <script>
     function copyEmail() {
       const email = "1219.hlee@gmail.com";
-      navigator.clipboard.writeText(email).then(() => {
-        const toast = document.getElementById("copy-toast");
-        toast.className = "show";
-        setTimeout(() => { toast.className = ""; }, 2500);
-      });
+      const toast = document.getElementById("copy-toast");
+      toast.className = "show";
+      setTimeout(function() { 
+        toast.className = ""; 
+      }, 2500);
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email).catch(function(err) {
+          console.error('복사 실패:', err);
+        });
+      }
     }
   </script>
 </body>
