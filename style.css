@@ -45,7 +45,7 @@ body {
 h1 {
   font-family: 'Poppins', sans-serif;
   font-size: var(--font-xl);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   line-height: 1.2;
   margin-top: var(--space-l);
   margin-bottom: var(--space-s);
