@@ -1,21 +1,13 @@
-/* ==========================================================================
-   1. DESIGN TOKENS (Variables)
-   ========================================================================== */
 :root {
-  /* Spacing */
   --space-s: 16px;
   --space-m: 24px;
   --space-l: 40px;
   --space-xl: 80px;
-   
-  /* Typography */
   --font-xs: 12px;
   --font-s: 16px;
   --font-m: 18px;
   --font-l: 20px;
-  --font-xl: 42px; /* 너무 큰 폰트는 가독성을 해쳐서 살짝 조정 */
-
-  /* Colors */
+  --font-xl: 42px;
   --color-bg: #f9fafb;
   --color-text: #111827;
   --color-muted: #6b7280;
@@ -24,13 +16,11 @@
   --color-surface: #ffffff;
 }
 
-/* ==========================================================================
-   2. RESET & BASE STYLES
-   ========================================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -40,59 +30,21 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   text-align: center;
+  word-break: keep-all;
 }
 
-h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: var(--font-xl);
-  letter-spacing: 0;
-  line-height: 1.2;
-  margin-top: var(--space-l);
-  margin-bottom: var(--space-s);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* ==========================================================================
-   3. LAYOUT COMPONENTS
-   ========================================================================== */
-.main-content {
-  padding-top: var(--space-m);
-  min-height: 80vh; /* 푸터가 둥둥 떠다니는 것을 방지 */
-}
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 var(--space-s);
-}
+/* Header & Nav */
 .main-header {
   background: var(--color-surface);
-  padding: 6px 8px;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 44px;
+  height: 56px;
   display: flex;
   align-items: center;
 }
-.main-header nav a {
-  transition: color 0.2s ease;
-}
-.main-header nav a:hover {
-  color: var(--color-primary); /* 마우스 올리면 부드럽게 파란색으로 */
-}
-.page-title {
-  margin-top: 0;
-  margin-bottom: var(--space-l);
-  letter-spacing: 0;
-  font-size: var(--font-xl);
-  text-transform: uppercase;
-}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -100,122 +52,53 @@ img {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-   padding: 0 var(--space-s); 
+  padding: 0 var(--space-s);
 }
 
 .logo {
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 14px;
-   line-height: 1; 
-  display: flex;
-  align-items: center;
+  font-size: 16px;
+  letter-spacing: -0.02em;
 }
 
 nav {
   display: flex;
-  align-items: center;
-  line-height: 1;
+  gap: 16px;
 }
 
 nav a {
-  margin-left: 12px;
   text-decoration: none;
   color: var(--color-text);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 1; /* 로고와 동일하게 줄높이 1로 고정 */
-   letter-spacing: 0.05em;
-  display: flex;
-  align-items: center;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
 }
 
-.card {
-  background-color: var(--color-surface);
-  border: 1px solid #f1f5f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  padding: var(--space-m); /* 약 24px의 균일한 여백 */
-  margin-bottom: var(--space-m);
-  text-align: left; /* 카드 내 텍스트는 기본 왼쪽 정렬 */
-  transition: transform 0.2s ease;
-}
-.card-image {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: var(--space-m);
-  display: block;
-}
-.card h2.highlight-text {
-  font-size: var(--font-l); /* 카드 내 메인 인사는 조금 더 크게 */
-  margin-bottom: var(--space-s);
-}
-.card h3.highlight-text {
-  font-size: var(--font-m); /* 소제목은 중간 크기로 위계 정리 */
-  margin-top: var(--space-m);
-  margin-bottom: 8px;
-}
-/* ==========================================================================
-   4. UI COMPONENTS (Buttons, Cards)
-   ========================================================================== */
-/* 버튼들을 감싸는 섹션에 여백을 주어 버튼끼리 붙지 않게 합니다 */
-.menu-section .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px; /* 버튼 사이의 일정한 간격 */
+nav a:hover {
+  color: var(--color-primary);
 }
 
-.cta-button, .menu-button {
-  display: block; /* 세로로 쌓이도록 다시 block으로 복구 */
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto; /* block일 때 중앙 정렬 */
-  padding: 16px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  line-height: 1;
-   letter-spacing: 0.05em;
+/* Layout */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--space-s);
 }
 
-/* 메인 버튼: 배경이 진하므로 글씨는 흰색 */
-.cta-button {
-  background-color: var(--color-primary);
-  color: #ffffff !important; /* 무조건 흰색 */
-  border: none;
-  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
-}
-.menu-button {
-  background-color: #ffffff;
-  color: var(--color-text);
-  border: 1px solid #e5e7eb;
-}
-.cta-button:hover {
-  background-color: var(--color-primary-hover);
-  transform: translateY(-2px);
-}
-.menu-button:hover {
-  background-color: #f8fafc;
-  border-color: var(--color-primary);
-  color: var(--color-primary)
-}
-/* ==========================================================================
-   5. PAGE SECTIONS
-   ========================================================================== */
-.hero {
-  padding: var(--space-m) 0 var(--space-l);
-   text-align: center;
+.main-content {
+  padding-top: var(--space-m);
+  min-height: 80vh;
 }
 
-.hero h1 {
+h1, .page-title {
+  font-family: 'Poppins', sans-serif;
   font-size: var(--font-xl);
-   margin-top: 0;
-  margin-bottom: var(--space-s); /* 제목과 설명 사이 여백 */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-s);
 }
 
 .hero-description {
@@ -223,64 +106,104 @@ nav a {
 }
 
 .highlight-text {
-   font-size: var(--font-m);
+  font-size: var(--font-m);
   font-weight: 600;
-  color: var(--color-text);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   display: block;
 }
 
 .sub-text {
   font-size: var(--font-s);
-  font-weight: 400;
   color: var(--color-muted);
-  line-height: 1.7;
 }
 
-.profile-photo {
-   display: block;
-  width: 150px; 
-  border-radius: 50%;
-  margin: 0 auto var(--space-m);
+/* Card System */
+.card {
+  background: var(--color-surface);
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+  text-align: left;
 }
 
-/* ==========================================================================
-   6. UTILITIES & FOOTER
-   ========================================================================== */
-.small-text {
-  font-size: var(--font-xs);
-  color: var(--color-muted);
-  margin-top: var(--space-m);
+/* Button System - The Core Fix */
+.menu-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
+
+.cta-button, 
+.menu-button {
+  /* 태그 차이 무력화 */
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  height: 56px; /* 높이 고정으로 패딩 오차 차단 */
+  padding: 0;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  
+  /* 폰트 유전자 고정 */
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-m);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.cta-button {
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+}
+
+.cta-button:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+.menu-button {
+  background-color: #ffffff;
+  color: var(--color-text) !important;
+  border: 1px solid #e5e7eb;
+}
+
+.menu-button:hover {
+  background-color: #f8fafc;
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Footer */
 .footer {
   margin-top: var(--space-xl);
-  padding: 40px 20px;
+  padding: 60px 20px;
   font-size: var(--font-xs);
   color: var(--color-muted);
   border-top: 1px solid #f0f0f0;
 }
-/* ===7.MOBILE=== */
-@media (max-width: 480px) {
-  .main-header { padding: 4px 8px; height: 40px;}
-  .logo { font-size: 13px; }
-  nav a { margin-left: 10px; font-size: 11px; }
-   h1 { font-size: 28px; margin-top: var(--space-m); }
-   .nav-container {padding: 0 var(--space-xs); }
-   .hero h1, h1, .page-title { font-size: 30px; }
-}
-/* ==========================================================================
-   8. CONTACT PAGE SPECIAL (Toast & Button Reset)
-   ========================================================================== */
 
-/* 이메일 복사 알림창: 공중부양 레이어 */
+/* Toast Notification */
 #copy-toast {
   visibility: hidden;
-  min-width: 200px;
+  min-width: 220px;
   background-color: var(--color-text);
   color: #fff;
   text-align: center;
   border-radius: 8px;
-  padding: 12px;
+  padding: 14px;
   position: fixed;
   z-index: 1000;
   left: 50%;
@@ -298,37 +221,10 @@ nav a {
   bottom: 50px;
 }
 
-/* [긴급수정] 버튼 태그 리셋: 폰트 유전자를 <a> 태그와 100% 일치시킴 */
-button.menu-button {
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-  
-  /* 폰트 위계 강제 상속 */
-  font-family: inherit;  /* 부모의 Inter 폰트 강제 상속 */
-  font-size: inherit;    /* 브라우저 기본 13px 숙청 -> 18px 상속 */
-  font-weight: inherit;  /* 600 두께 강제 상속 */
-  line-height: inherit;  /* 줄높이 일치 */
-  letter-spacing: inherit; /* 자간 0.05em 일치 */
-  
-  background-color: #ffffff;
-  color: var(--color-text);
-  border: 1px solid #e5e7eb;
-  outline: none;
-  
-  /* 버튼 특유의 내부 패딩 리셋 */
-  padding: 16px 20px; 
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-}
-
-button.menu-button:hover {
-  background-color: #f8fafc;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: translateY(-2px);
+/* Mobile */
+@media (max-width: 480px) {
+  h1, .page-title { font-size: 32px; }
+  .nav-container { height: 48px; }
+  .logo { font-size: 14px; }
+  nav a { font-size: 11px; gap: 12px; }
 }
