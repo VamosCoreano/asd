@@ -181,6 +181,8 @@ nav a {
   transition: all 0.2s ease;
   line-height: 1;
    letter-spacing: 0.05em;
+   height: 56px;
+   font-family: 'Inter', sans-serif;
 }
 
 /* 메인 버튼: 배경이 진하므로 글씨는 흰색 */
