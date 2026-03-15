@@ -84,7 +84,7 @@ img {
   transition: color 0.2s ease;
 }
 .main-header nav a:hover {
-  color: var(--color-primary); /* 마우스 올리면 부드럽게 파란색으로 */
+  color: var(--color-primary);
 }
 .page-title {
   margin-top: 0;
@@ -160,7 +160,6 @@ nav a {
 /* ==========================================================================
    4. UI COMPONENTS (Buttons, Cards)
    ========================================================================== */
-/* 버튼들을 감싸는 섹션에 여백을 주어 버튼끼리 붙지 않게 합니다 */
 .menu-section .container {
   display: flex;
   flex-direction: column;
@@ -184,16 +183,14 @@ nav a {
    height: 56px;
    font-family: 'Inter', sans-serif;
 }
-
-/* 메인 버튼: 배경이 진하므로 글씨는 흰색 */
 .cta-button {
   background-color: var(--color-primary);
-  color: #ffffff !important; /* 무조건 흰색 */
+  color: var(--color-surface);
   border: none;
   box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
 }
 .menu-button {
-  background-color: #ffffff;
+  background-color: var(--color-surface);
   color: var(--color-text);
   border: 1px solid #e5e7eb;
 }
