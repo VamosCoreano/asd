@@ -300,6 +300,67 @@ button.menu-button {
   font-weight: 600;
   outline: none;
 }
+
+/* ==========================================================================
+   9. RESEÑAS (REVIEWS) PAGE STYLES
+   ========================================================================== */
+
+.review-card {
+  position: relative;
+  padding: 50px var(--space-m) var(--space-m); /* 상단에 따옴표 공간 확보 */
+  overflow: hidden;
+}
+
+/* 따옴표를 장식 요소로 변경 */
+.quote-icon {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 100px;
+  color: var(--color-primary);
+  opacity: 0.1; /* 아주 은은하게 */
+  pointer-events: none; /* 클릭 방해 금지 */
+}
+
+/* 핵심 문장 강조 (현재 HTML에서 닫히지 않은 span 수정용) */
+.focus-text {
+  display: block;
+  font-size: 22px; /* 강조를 위해 크게 */
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.quote-text {
+  font-size: var(--font-s);
+  color: var(--color-muted);
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* 학생 정보 섹션 */
+.student-info {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.student-name {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: var(--font-s);
+}
+
+.student-context {
+  font-size: var(--font-xs);
+  color: var(--color-muted);
+}
 button.menu-button:hover {
   background-color: #f8fafc;
   border-color: var(--color-primary);
